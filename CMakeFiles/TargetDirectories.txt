@@ -1,0 +1,6 @@
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/install.dir
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/list_install_components.dir
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/install/strip.dir
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/install/local.dir
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/rebuild_cache.dir
+/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/edit_cache.dir

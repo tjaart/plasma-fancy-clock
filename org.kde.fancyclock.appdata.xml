@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component>
+    <id>org.kde.fancyclock</id>
+    <name>Fancy Clock</name>
+    <summary>A nice looking clock</summary>
+    <url type="homepage">plasma.kde.org</url>
+    <developer_name>Tjaart &lt;tjaartblig@gmail.com&gt;</developer_name>
+    <project_license>GPL</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+</component>
