@@ -4,7 +4,6 @@ Name=Fancy Clock
 Comment=A nice looking clock
 Type=Service
 
-#X-KDE-Library=plasma_applet_tutorial
 X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=Tjaart
 X-KDE-PluginInfo-Email=tjaartblig@gmail.com
