@@ -6,15 +6,22 @@
     <kcfgfile name=""/>
 
     <group name="General">
-        <entry name="showHidden" type="bool">
+        <entry name="showBackground" type="bool">
             <default>false</default>
         </entry>
-        <entry name="showDevices" type="bool">
-            <default>true</default>
+        <entry name="timeFontSize" type="int">
+            <default>4</default>
         </entry>
-        <entry name="widgetWidth" type="int">
-            <default>250</default>
+        <entry name="dateFontSize" type="int">
+            <default>7</default>
         </entry>
+        <entry name="timeFormat" type="string">
+            <default><![CDATA[<b>HH</b>:mm:ss]]></default>
+        </entry>
+        <entry name="dateFormat" type="string">
+            <default><![CDATA[dd MMM yyyy]]></default>
+        </entry>
+        
     </group>
     
 </kcfg>

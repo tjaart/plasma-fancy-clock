@@ -1,11 +1,12 @@
 [Desktop Entry]
-Encoding=UTF-8
-Name=Fancy Clock
 Comment=A nice looking clock
+Encoding=UTF-8
+Icon=clock
+Name=Fancy Clock
 Type=Service
-
 X-KDE-ParentApp=
 X-KDE-PluginInfo-Author=Tjaart
+X-KDE-PluginInfo-Category=Date and Time
 X-KDE-PluginInfo-Email=tjaartblig@gmail.com
 X-KDE-PluginInfo-License=GPL
 X-KDE-PluginInfo-Name=org.kde.fancyclock
@@ -14,4 +15,3 @@ X-KDE-PluginInfo-Website=plasma.kde.org
 X-KDE-ServiceTypes=Plasma/Applet
 X-Plasma-API=declarativeappletscript
 X-Plasma-MainScript=ui/main.qml
-X-KDE-PluginInfo-Category=Date and Time

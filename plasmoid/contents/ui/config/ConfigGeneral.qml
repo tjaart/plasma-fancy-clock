@@ -1,5 +1,5 @@
 /*
- * Copyright 2016  Daniel Faust <hessijames@gmail.com>
+ * Copyright 2017  Tjaart Blignaut <tjaartblig@gmail.com>
  *
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License as
@@ -19,38 +19,63 @@ import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
 
 Item {
-    property alias cfg_showHidden: showHidden.checked
-    property alias cfg_showDevices: showDevices.checked
-    property alias cfg_widgetWidth: widgetWidth.value
-
-    property var mediumSpacing: 1.5*units.smallSpacing
-
+    property alias cfg_showBackground: showBackground.checked
+    property alias cfg_dateFontSize: dateFontSize.value
+    property alias cfg_timeFontSize: timeFontSize.value
+    property alias cfg_timeFormat: timeFormat.text
+    property alias cfg_dateFormat: dateFormat.text
+    
     GridLayout {
         columns: 2
-
+        Layout.fillWidth: true;
         CheckBox {
-            id: showHidden
-            text: i18n('Show hidden places')
-            Layout.columnSpan: 2
-        }
-
-        CheckBox {
-            id: showDevices
-            text: i18n('Show devices')
+            id: showBackground
+            text: i18n('Show plasmoid background')
             Layout.columnSpan: 2
         }
 
         Label {
-            text: i18n('Widget width:')
+            text: i18n('Time font size ratio:')
         }
 
         SpinBox {
-            id: widgetWidth
-            minimumValue: units.iconSizes.medium + 2*mediumSpacing
-            maximumValue: 1000
+            id: timeFontSize
+            minimumValue: 4
+            maximumValue: 10
             decimals: 0
-            stepSize: 10
-            suffix: ' px'
+            stepSize: 1
+        }
+        
+        Label {
+            text: i18n('Date font size ratio:')
+        }
+
+        SpinBox {
+            id: dateFontSize
+            minimumValue: 4
+            maximumValue: 10
+            decimals: 0
+            stepSize: 1
+        }
+        
+        Label {
+            text: i18n('Time format:')
+            
+        }
+            
+        TextField {
+            id: timeFormat
+            width: 200
+        }
+        
+        Label {
+            text: i18n('Date format:')
+            
+        }
+            
+        TextField {
+            id: dateFormat
+            width: 200
         }
     }
 }
