@@ -43,10 +43,10 @@ RM = /usr/bin/cmake -E remove -f
 EQUALS = =
 
 # The top-level source directory on which CMake was run.
-CMAKE_SOURCE_DIR = /home/tjaart/Projects/KdeDev/tutorialplasmoid
+CMAKE_SOURCE_DIR = /home/tjaart/Projects/KdeDev/plasma-fancy-clock
 
 # The top-level build directory on which CMake was run.
-CMAKE_BINARY_DIR = /home/tjaart/Projects/KdeDev/tutorialplasmoid
+CMAKE_BINARY_DIR = /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build
 
 # Utility rule file for org.kde.fancyclock-plasmoids-metadata-json.
 
@@ -57,8 +57,8 @@ CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json: org.kde.fancyclock-plasmo
 
 
 org.kde.fancyclock-plasmoids-metadata.json:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating org.kde.fancyclock-plasmoids-metadata.json"
-	/usr/bin/desktoptojson -i /home/tjaart/Projects/KdeDev/tutorialplasmoid/plasmoid/metadata.desktop -o /home/tjaart/Projects/KdeDev/tutorialplasmoid/org.kde.fancyclock-plasmoids-metadata.json
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating org.kde.fancyclock-plasmoids-metadata.json"
+	/usr/bin/desktoptojson -i /home/tjaart/Projects/KdeDev/plasma-fancy-clock/plasmoid/metadata.desktop -o /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/org.kde.fancyclock-plasmoids-metadata.json
 
 org.kde.fancyclock-plasmoids-metadata-json: CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json
 org.kde.fancyclock-plasmoids-metadata-json: org.kde.fancyclock-plasmoids-metadata.json
@@ -76,6 +76,6 @@ CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/clean:
 .PHONY : CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/clean
 
 CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/depend:
-	cd /home/tjaart/Projects/KdeDev/tutorialplasmoid && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tjaart/Projects/KdeDev/tutorialplasmoid /home/tjaart/Projects/KdeDev/tutorialplasmoid /home/tjaart/Projects/KdeDev/tutorialplasmoid /home/tjaart/Projects/KdeDev/tutorialplasmoid /home/tjaart/Projects/KdeDev/tutorialplasmoid/CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/DependInfo.cmake --color=$(COLOR)
+	cd /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build && $(CMAKE_COMMAND) -E cmake_depends "Unix Makefiles" /home/tjaart/Projects/KdeDev/plasma-fancy-clock /home/tjaart/Projects/KdeDev/plasma-fancy-clock /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/DependInfo.cmake --color=$(COLOR)
 .PHONY : CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/depend
 

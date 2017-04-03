@@ -1,4 +1,0 @@
-/usr/local/share/plasma/plasmoids/org.kde.fancyclock/contents/ui/main.qml
-/usr/local/share/plasma/plasmoids/org.kde.fancyclock/metadata.desktop
-/usr/local/share/metainfo/org.kde.fancyclock.appdata.xml
-/usr/local/share/kservices5/plasma-applet-org.kde.fancyclock.desktop
