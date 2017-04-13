@@ -9,11 +9,30 @@
         <entry name="showBackground" type="bool">
             <default>false</default>
         </entry>
+        <entry name="useSystemFontForTime" type="bool">
+            <default>true</default>
+        </entry>
+
         <entry name="timeFontSize" type="int">
             <default>4</default>
+            <maximum>10</maximum>
+            <minimum>4</minimum>
         </entry>
         <entry name="dateFontSize" type="int">
             <default>7</default>
+        </entry>
+        
+        <entry name="textTimeFontFamily" type="string">
+            <default>Lato</default>
+            <maximum>10</maximum>
+            <minimum>4</minimum>
+        </entry>
+        
+        <entry name="useSystemColorForTime" type="bool">
+            <default>true</default>
+        </entry>
+        <entry name="textTimeColor" type="string">
+            <default>#ffffff</default>
         </entry>
         <entry name="timeFormat" type="string">
             <default><![CDATA[<b>HH</b>:mm:ss]]></default>

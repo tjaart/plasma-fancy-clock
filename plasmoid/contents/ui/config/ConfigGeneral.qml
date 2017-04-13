@@ -17,22 +17,88 @@
 import QtQuick 2.2
 import QtQuick.Controls 1.3
 import QtQuick.Layouts 1.1
+import QtQuick.Dialogs 1.2
 
 Item {
-    property alias cfg_showBackground: showBackground.checked
+    
     property alias cfg_dateFontSize: dateFontSize.value
     property alias cfg_timeFontSize: timeFontSize.value
+    property alias cfg_useSystemFontForTime: useSystemFontForTime.checked
     property alias cfg_timeFormat: timeFormat.text
     property alias cfg_dateFormat: dateFormat.text
+    property alias cfg_textTimeFontFamily: timeFontDialog.font
+    property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
+    property alias cfg_textTimeColor: timeColorPicker.chosenColor
     
     GridLayout {
         columns: 2
         Layout.fillWidth: true;
+        // can't get this setting to look good.
+//         CheckBox {
+//             id: showBackground
+//             text: i18n('Show plasmoid background')
+//             Layout.columnSpan: 2
+//         }
+        
+        Label {
+            text: i18n("Time Settings")
+            font.pointSize: 16
+        }
+        
+        Label {
+            text: i18n('Time format:')
+            
+        }
+            
+        TextField {
+            id: timeFormat
+            width: 200
+        }
+        
         CheckBox {
-            id: showBackground
-            text: i18n('Show plasmoid background')
+            id: useSystemFontForTime
+            text: i18n('Use system font')
             Layout.columnSpan: 2
         }
+        
+        RowLayout {
+            enabled: !useSystemFontForTime.checked
+            Label {
+                text: i18n("Time font:")
+            }
+                
+            RowLayout {
+                
+                Label {
+                    text: timeFontDialog.font.family
+                    Layout.fillWidth: true
+                }
+                Button {
+                    text: i18n("Choose font")
+                    onClicked: timeFontDialog.visible = true;
+                    FontDialog {
+                        id: timeFontDialog
+                    }
+                }
+            }
+        }
+        
+        CheckBox {
+            id: useSystemColorForTime
+            text: i18n('Use system color for time')
+            Layout.columnSpan: 2
+        }
+        
+        Label {
+            text: i18n("Time Color:")
+        }
+    
+        ColorPicker{
+            id: timeColorPicker
+            enabled: !useSystemColorForTime.checked
+        }
+        
+        
 
         Label {
             text: i18n('Time font size ratio:')
@@ -44,6 +110,56 @@ Item {
             maximumValue: 10
             decimals: 0
             stepSize: 1
+        }
+        
+        // ---- Date things
+        
+        Label {
+            text: i18n("Date Settings")
+            font.pointSize: 16
+        }
+        
+        CheckBox {
+            id: useSystemFontForDate
+            text: i18n('Use system font')
+            Layout.columnSpan: 2
+        }
+        
+        RowLayout {
+            enabled: !useSystemFontForDate.checked
+            Label {
+                text: i18n("Date font:")
+            }
+                
+            RowLayout {
+                
+                Label {
+                    text: dateFontDialog.font.family
+                    Layout.fillWidth: true
+                }
+                Button {
+                    text: i18n("Choose font")
+                    onClicked: dateFontDialog.visible = true;
+                    FontDialog {
+                        id: dateFontDialog
+                    }
+                }
+            }
+        }
+        
+        CheckBox {
+            id: useSystemColorForDate
+            text: i18n('Use system color for date')
+            Layout.columnSpan: 2
+        }
+        
+        Label {
+            text: i18n("Date Color:")
+        }
+    
+        ColorPicker{
+            id: dateColorPicker
+            enabled: !useSystemColorForDate.checked
         }
         
         Label {
@@ -58,15 +174,7 @@ Item {
             stepSize: 1
         }
         
-        Label {
-            text: i18n('Time format:')
-            
-        }
-            
-        TextField {
-            id: timeFormat
-            width: 200
-        }
+
         
         Label {
             text: i18n('Date format:')

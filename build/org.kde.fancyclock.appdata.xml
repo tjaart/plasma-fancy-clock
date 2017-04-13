@@ -5,6 +5,7 @@
     <summary>A nice looking clock</summary>
     <url type="homepage">plasma.kde.org</url>
     <developer_name>Tjaart &lt;tjaartblig@gmail.com&gt;</developer_name>
+    <icon type="stock">clock</icon>
     <project_license>GPL</project_license>
     <metadata_license>CC0-1.0</metadata_license>
 </component>

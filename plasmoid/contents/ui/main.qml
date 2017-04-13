@@ -34,9 +34,16 @@ Item {
     property int dateFontSize: plasmoid.configuration.dateFontSize
     property string timeFormat: plasmoid.configuration.timeFormat
     property string dateFormat: plasmoid.configuration.dateFormat
+    property bool useSystemFontForTime: plasmoid.configuration.useSystemFontForTime
+    property string textTimeFontFamily: plasmoid.configuration.textTimeFontFamily
+    property bool useSystemColorForTime: plasmoid.configuration.useSystemColorForTime
+    property string textTimeColor: plasmoid.configuration.textTimeColor
+    
     property int widgetWidth: width
     
     anchors.fill: parent
+    anchors.margins: 5
+    Layout.minimumHeight: columns.height
     Plasmoid.backgroundHints: showBackground ? "StandardBackground" : "NoBackground";
     
     PlasmaCore.DataSource {
@@ -47,27 +54,38 @@ Item {
     }
     
     ColumnLayout {
+        
         id: columns
+        
+        
         Layout.fillWidth: true;
         Layout.fillHeight: true;
         
         PlasmaComponents.Label {
+            id: defaultLabel
+            visible: false;
+            anchors.horizontalCenter: parent.horizontalCenter
+        }
+        
+        PlasmaComponents.Label {
             text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
             font.pixelSize: widgetWidth / timeFontSize;
-            font.family: "Lato";
+            font.family: useSystemFontForTime ? defaultLabel.font.family : textTimeFontFamily;
             font.bold: true
+            color: useSystemColorForTime ? defaultLabel.color : textTimeColor;
             id: timeLabel
-            anchors.horizontalCenter: parent.horizontalCenter
+            anchors.horizontalCenter: defaultLabel.horizontalCenter
         }
          
         PlasmaComponents.Label {
             font.pixelSize: widgetWidth / dateFontSize;
-            font.family: "Lato";
+         
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             id: dateLabel
-            anchors.horizontalCenter: parent.horizontalCenter
+            font.family: "Lato";
+            anchors.horizontalCenter: defaultLabel.horizontalCenter
         }
-    
+        
         DropShadow {
             anchors.fill: timeLabel
             horizontalOffset: 3
@@ -77,7 +95,7 @@ Item {
             color: "#80000000"
             source: timeLabel
         }
-        
+    
         DropShadow {
             anchors.fill: dateLabel
             horizontalOffset: 3
