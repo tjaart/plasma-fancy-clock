@@ -58,7 +58,7 @@ CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json: org.kde.fancyclock-plasmo
 
 org.kde.fancyclock-plasmoids-metadata.json:
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --blue --bold --progress-dir=/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles --progress-num=$(CMAKE_PROGRESS_1) "Generating org.kde.fancyclock-plasmoids-metadata.json"
-	/usr/bin/desktoptojson -i /home/tjaart/Projects/KdeDev/plasma-fancy-clock/plasmoid/metadata.desktop -o /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/org.kde.fancyclock-plasmoids-metadata.json
+	/usr/bin/desktoptojson -i /home/tjaart/Projects/KdeDev/plasma-fancy-clock/org.kde.fancyclock/metadata.desktop -o /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/org.kde.fancyclock-plasmoids-metadata.json
 
 org.kde.fancyclock-plasmoids-metadata-json: CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json
 org.kde.fancyclock-plasmoids-metadata-json: org.kde.fancyclock-plasmoids-metadata.json

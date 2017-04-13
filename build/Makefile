@@ -78,6 +78,17 @@ list_install_components/fast: list_install_components
 
 .PHONY : list_install_components/fast
 
+# Special rule for the target rebuild_cache
+rebuild_cache:
+	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
+	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
+.PHONY : rebuild_cache
+
+# Special rule for the target rebuild_cache
+rebuild_cache/fast: rebuild_cache
+
+.PHONY : rebuild_cache/fast
+
 # Special rule for the target install/strip
 install/strip: preinstall
 	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Installing the project stripped..."
@@ -99,17 +110,6 @@ install/local: preinstall
 install/local/fast: install/local
 
 .PHONY : install/local/fast
-
-# Special rule for the target rebuild_cache
-rebuild_cache:
-	@$(CMAKE_COMMAND) -E cmake_echo_color --switch=$(COLOR) --cyan "Running CMake to regenerate build system..."
-	/usr/bin/cmake -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR)
-.PHONY : rebuild_cache
-
-# Special rule for the target rebuild_cache
-rebuild_cache/fast: rebuild_cache
-
-.PHONY : rebuild_cache/fast
 
 # Special rule for the target edit_cache
 edit_cache:
@@ -154,6 +154,19 @@ depend:
 	$(CMAKE_COMMAND) -H$(CMAKE_SOURCE_DIR) -B$(CMAKE_BINARY_DIR) --check-build-system CMakeFiles/Makefile.cmake 1
 .PHONY : depend
 
+#=============================================================================
+# Target rules for targets named org.kde.fancyclock-plasmoids-metadata-json
+
+# Build rule for target.
+org.kde.fancyclock-plasmoids-metadata-json: cmake_check_build_system
+	$(MAKE) -f CMakeFiles/Makefile2 org.kde.fancyclock-plasmoids-metadata-json
+.PHONY : org.kde.fancyclock-plasmoids-metadata-json
+
+# fast build rule for target.
+org.kde.fancyclock-plasmoids-metadata-json/fast:
+	$(MAKE) -f CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/build.make CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir/build
+.PHONY : org.kde.fancyclock-plasmoids-metadata-json/fast
+
 # Help Target
 help:
 	@echo "The following are some of the valid targets for this Makefile:"
@@ -162,9 +175,10 @@ help:
 	@echo "... depend"
 	@echo "... install"
 	@echo "... list_install_components"
+	@echo "... rebuild_cache"
 	@echo "... install/strip"
 	@echo "... install/local"
-	@echo "... rebuild_cache"
+	@echo "... org.kde.fancyclock-plasmoids-metadata-json"
 	@echo "... edit_cache"
 .PHONY : help
 
