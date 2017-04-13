@@ -21,14 +21,20 @@ import QtQuick.Dialogs 1.2
 
 Item {
     
-    property alias cfg_dateFontSize: dateFontSize.value
+    property alias cfg_timeFormat: timeFormat.text
     property alias cfg_timeFontSize: timeFontSize.value
     property alias cfg_useSystemFontForTime: useSystemFontForTime.checked
-    property alias cfg_timeFormat: timeFormat.text
-    property alias cfg_dateFormat: dateFormat.text
     property alias cfg_textTimeFontFamily: timeFontDialog.font
     property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
     property alias cfg_textTimeColor: timeColorPicker.chosenColor
+    
+    property alias cfg_dateFormat: dateFormat.text
+    property alias cfg_dateFontSize: dateFontSize.value
+    property alias cfg_useSystemFontForDate: useSystemFontForDate.checked
+    property alias cfg_textDateFontFamily: dateFontDialog.font
+    property alias cfg_useSystemColorForDate: useSystemColorForDate.checked
+    property alias cfg_textDateColor: dateColorPicker.chosenColor
+
     
     GridLayout {
         columns: 2
@@ -43,6 +49,7 @@ Item {
         Label {
             text: i18n("Time Settings")
             font.pointSize: 16
+            Layout.columnSpan: 2
         }
         
         Label {
@@ -97,8 +104,6 @@ Item {
             id: timeColorPicker
             enabled: !useSystemColorForTime.checked
         }
-        
-        
 
         Label {
             text: i18n('Time font size ratio:')
@@ -174,11 +179,8 @@ Item {
             stepSize: 1
         }
         
-
-        
         Label {
             text: i18n('Date format:')
-            
         }
             
         TextField {

@@ -30,14 +30,21 @@ Item {
     Layout.fillHeight: true;
     
     property bool showBackground: plasmoid.configuration.showBackground
-    property int timeFontSize: plasmoid.configuration.timeFontSize
-    property int dateFontSize: plasmoid.configuration.dateFontSize
+    
     property string timeFormat: plasmoid.configuration.timeFormat
-    property string dateFormat: plasmoid.configuration.dateFormat
+    property int timeFontSize: plasmoid.configuration.timeFontSize
     property bool useSystemFontForTime: plasmoid.configuration.useSystemFontForTime
     property string textTimeFontFamily: plasmoid.configuration.textTimeFontFamily
     property bool useSystemColorForTime: plasmoid.configuration.useSystemColorForTime
     property string textTimeColor: plasmoid.configuration.textTimeColor
+    
+    property string dateFormat: plasmoid.configuration.dateFormat
+    property int dateFontSize: plasmoid.configuration.dateFontSize
+    property bool useSystemFontForDate: plasmoid.configuration.useSystemFontForDate
+    property string textDateFontFamily: plasmoid.configuration.textDateFontFamily
+    property bool useSystemColorForDate: plasmoid.configuration.useSystemColorForDate
+    property string textDateColor: plasmoid.configuration.textDateColor
+    
     
     property int widgetWidth: width
     
@@ -68,21 +75,21 @@ Item {
         }
         
         PlasmaComponents.Label {
+            id: timeLabel
             text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
             font.pixelSize: widgetWidth / timeFontSize;
             font.family: useSystemFontForTime ? defaultLabel.font.family : textTimeFontFamily;
             font.bold: true
             color: useSystemColorForTime ? defaultLabel.color : textTimeColor;
-            id: timeLabel
             anchors.horizontalCenter: defaultLabel.horizontalCenter
         }
          
         PlasmaComponents.Label {
-            font.pixelSize: widgetWidth / dateFontSize;
-         
-            text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             id: dateLabel
-            font.family: "Lato";
+            font.pixelSize: widgetWidth / dateFontSize;
+            text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
+            color: useSystemColorForDate ? defaultLabel.color : textDateColor;
+            font.family: useSystemFontForDate ? defaultLabel.font.family : textDateFontFamily;
             anchors.horizontalCenter: defaultLabel.horizontalCenter
         }
         
