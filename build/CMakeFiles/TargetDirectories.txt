@@ -1,7 +1,6 @@
 /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/install.dir
 /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/list_install_components.dir
-/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/rebuild_cache.dir
 /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/install/strip.dir
 /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/install/local.dir
-/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json.dir
+/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/rebuild_cache.dir
 /home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/CMakeFiles/edit_cache.dir

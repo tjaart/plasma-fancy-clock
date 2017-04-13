@@ -37,10 +37,6 @@ if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspeci
 endif()
 
 if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
-  file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/plasma/plasmoids/org.kde.fancyclock" TYPE FILE RENAME "metadata.json" FILES "/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/org.kde.fancyclock-plasmoids-metadata.json")
-endif()
-
-if(NOT CMAKE_INSTALL_COMPONENT OR "${CMAKE_INSTALL_COMPONENT}" STREQUAL "Unspecified")
   file(INSTALL DESTINATION "${CMAKE_INSTALL_PREFIX}/share/metainfo" TYPE FILE FILES "/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build/org.kde.fancyclock.appdata.xml")
 endif()
 

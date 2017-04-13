@@ -1,3 +1,2 @@
 # Hashes of file build rules.
-52b9482ea0a7dd4ff77555059124935b CMakeFiles/org.kde.fancyclock-plasmoids-metadata-json
 7ecbff996557601105ec42a328ffc88b org.kde.fancyclock-plasmoids-metadata.json
