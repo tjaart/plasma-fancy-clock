@@ -111,7 +111,7 @@ Item {
 
         SpinBox {
             id: timeFontSize
-            minimumValue: 4
+            minimumValue: 2
             maximumValue: 10
             decimals: 0
             stepSize: 1
@@ -173,7 +173,7 @@ Item {
 
         SpinBox {
             id: dateFontSize
-            minimumValue: 4
+            minimumValue: 2
             maximumValue: 10
             decimals: 0
             stepSize: 1
