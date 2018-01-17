@@ -24,14 +24,14 @@ Item {
     property alias cfg_timeFormat: timeFormat.text
     property alias cfg_timeFontSize: timeFontSize.value
     property alias cfg_useSystemFontForTime: useSystemFontForTime.checked
-    property alias cfg_textTimeFontFamily: timeFontDialog.font
+    property alias cfg_textTimeFont: timeFontDialog.font
     property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
     property alias cfg_textTimeColor: timeColorPicker.chosenColor
     
     property alias cfg_dateFormat: dateFormat.text
     property alias cfg_dateFontSize: dateFontSize.value
     property alias cfg_useSystemFontForDate: useSystemFontForDate.checked
-    property alias cfg_textDateFontFamily: dateFontDialog.font
+    property alias cfg_textDateFont: dateFontDialog.font
     property alias cfg_useSystemColorForDate: useSystemColorForDate.checked
     property alias cfg_textDateColor: dateColorPicker.chosenColor
 
@@ -111,7 +111,7 @@ Item {
 
         SpinBox {
             id: timeFontSize
-            minimumValue: 2
+            minimumValue: 4
             maximumValue: 10
             decimals: 0
             stepSize: 1
@@ -173,7 +173,7 @@ Item {
 
         SpinBox {
             id: dateFontSize
-            minimumValue: 2
+            minimumValue: 4
             maximumValue: 10
             decimals: 0
             stepSize: 1

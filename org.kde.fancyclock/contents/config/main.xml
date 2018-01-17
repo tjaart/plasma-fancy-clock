@@ -19,7 +19,7 @@
             <minimum>2</minimum>
         </entry>
         
-        <entry name="textTimeFontFamily" type="string">
+        <entry name="textTimeFont" type="Font">
             <default>Lato</default>
         </entry>
         
@@ -44,7 +44,7 @@
             <minimum>2</minimum>
         </entry>
         
-        <entry name="textDateFontFamily" type="string">
+        <entry name="textDateFont" type="Font">
             <default>Lato</default>
         </entry>
         
