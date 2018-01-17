@@ -61,18 +61,9 @@ Item {
     }
     
     ColumnLayout {
-        
         id: columns
-        
-        
-        Layout.fillWidth: true;
-        Layout.fillHeight: true;
-        
-        PlasmaComponents.Label {
-            id: defaultLabel
-            visible: false;
-            anchors.horizontalCenter: parent.horizontalCenter
-        }
+        spacing: 0;
+        width: root.width;
         
         PlasmaComponents.Label {
             id: timeLabel
@@ -83,8 +74,9 @@ Item {
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
             
-            color: useSystemColorForTime ? defaultLabel.color : textTimeColor;
-            anchors.horizontalCenter: defaultLabel.horizontalCenter
+            color: useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
+            
+            anchors.horizontalCenter: columns.horizontalCenter;
         }
          
         PlasmaComponents.Label {
@@ -97,8 +89,9 @@ Item {
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textDateFont.weight;
             
             
-            color: useSystemColorForDate ? defaultLabel.color : textDateColor;
-            anchors.horizontalCenter: defaultLabel.horizontalCenter
+            color: useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
+            
+            anchors.horizontalCenter: columns.horizontalCenter;
         }
         
         DropShadow {
