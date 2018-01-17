@@ -25,9 +25,6 @@ import QtGraphicalEffects 1.0
 
 Item {
     id: root
-
-    Layout.fillWidth: true;
-    Layout.fillHeight: true;
     
     property bool showBackground: plasmoid.configuration.showBackground
     
@@ -45,12 +42,8 @@ Item {
     property bool useSystemColorForDate: plasmoid.configuration.useSystemColorForDate
     property string textDateColor: plasmoid.configuration.textDateColor
     
-    
     property int widgetWidth: width
     
-    anchors.fill: parent
-    anchors.margins: 5
-    Layout.minimumHeight: columns.height
     Plasmoid.backgroundHints: showBackground ? "StandardBackground" : "NoBackground";
     
     PlasmaCore.DataSource {
