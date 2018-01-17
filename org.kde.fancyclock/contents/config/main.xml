@@ -16,10 +16,10 @@
         <entry name="timeFontSize" type="int">
             <default>4</default>
             <maximum>10</maximum>
-            <minimum>2</minimum>
+            <minimum>4</minimum>
         </entry>
         
-        <entry name="textTimeFontFamily" type="string">
+        <entry name="textTimeFont" type="Font">
             <default>Lato</default>
         </entry>
         
@@ -41,10 +41,10 @@
         <entry name="dateFontSize" type="int">
             <default>7</default>
             <maximum>10</maximum>
-            <minimum>2</minimum>
+            <minimum>4</minimum>
         </entry>
         
-        <entry name="textDateFontFamily" type="string">
+        <entry name="textDateFont" type="Font">
             <default>Lato</default>
         </entry>
         
