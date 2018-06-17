@@ -264,11 +264,22 @@ KDE_INSTALL_MIMEDIR:PATH=
 //Plugins (QTPLUGINDIR)
 KDE_INSTALL_PLUGINDIR:PATH=
 
+//Installs /usr/local/prefix.sh that sets up the necessary environment
+// variables
+KDE_INSTALL_PREFIX_SCRIPT:BOOL=OFF
+
+//documentation bundles in QCH format (DATAROOTDIR/doc/qch)
+KDE_INSTALL_QCHDIR:PATH=
+
 //QtQuick2 imports (LIBDIR/qml)
 KDE_INSTALL_QMLDIR:PATH=
 
 //Qt plugins (LIBDIR/plugins)
 KDE_INSTALL_QTPLUGINDIR:PATH=
+
+//documentation bundles in QCH format for Qt-extending libraries
+// (DATAROOTDIR/doc/qch)
+KDE_INSTALL_QTQCHDIR:PATH=
 
 //QtQuick1 imports (QTPLUGINDIR/imports)
 KDE_INSTALL_QTQUICKIMPORTSDIR:PATH=
@@ -288,8 +299,8 @@ KDE_INSTALL_SYSCONFDIR:PATH=
 //templates (DATAROOTDIR/templates)
 KDE_INSTALL_TEMPLATEDIR:PATH=
 
-//Install mkspecs files, Plugins and Imports to the Qt 5 install
-// dir
+//Install mkspecs files, QCH files for Qt-based libs, Plugins and
+// Imports to the Qt 5 install dir
 KDE_INSTALL_USE_QT_SYS_PATHS:BOOL=OFF
 
 //desktop wallpaper images (DATAROOTDIR/wallpapers)
@@ -310,6 +321,9 @@ KF5Plasma_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/KF5Plasma
 //The directory containing a CMake configuration file for KF5Service.
 KF5Service_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/KF5Service
 
+//The directory containing a CMake configuration file for KF5WindowSystem.
+KF5WindowSystem_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem
+
 //Value Computed by CMake
 Project_BINARY_DIR:STATIC=/home/tjaart/Projects/KdeDev/plasma-fancy-clock/build
 
@@ -324,6 +338,9 @@ Qt5Core_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Core
 
 //The directory containing a CMake configuration file for Qt5Gui.
 Qt5Gui_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui
+
+//The directory containing a CMake configuration file for Qt5Widgets.
+Qt5Widgets_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets
 
 //The directory containing a CMake configuration file for Qt5Xml.
 Qt5Xml_DIR:PATH=/usr/lib/x86_64-linux-gnu/cmake/Qt5Xml
@@ -522,10 +539,14 @@ KDE_INSTALL_METAINFODIR-ADVANCED:INTERNAL=1
 KDE_INSTALL_MIMEDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KDE_INSTALL_PLUGINDIR
 KDE_INSTALL_PLUGINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: KDE_INSTALL_QCHDIR
+KDE_INSTALL_QCHDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KDE_INSTALL_QMLDIR
 KDE_INSTALL_QMLDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KDE_INSTALL_QTPLUGINDIR
 KDE_INSTALL_QTPLUGINDIR-ADVANCED:INTERNAL=1
+//ADVANCED property for variable: KDE_INSTALL_QTQCHDIR
+KDE_INSTALL_QTQCHDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KDE_INSTALL_QTQUICKIMPORTSDIR
 KDE_INSTALL_QTQUICKIMPORTSDIR-ADVANCED:INTERNAL=1
 //ADVANCED property for variable: KDE_INSTALL_SBINDIR

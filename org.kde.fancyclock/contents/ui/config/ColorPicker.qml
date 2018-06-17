@@ -46,6 +46,7 @@ Item {
 
         QtDialogs.ColorDialog {
             id: colorDialog
+            showAlphaChannel: true
         }
     }
 

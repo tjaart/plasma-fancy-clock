@@ -40,6 +40,10 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/x86_64-linux-gnu/cmake/KF5Service/KF5ServiceMacros.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/KF5Service/KF5ServiceTargets-debian.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/KF5Service/KF5ServiceTargets.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemConfig.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemConfigVersion.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemTargets-debian.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/KF5WindowSystem/KF5WindowSystemTargets.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtras.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Core/Qt5CoreConfigExtrasMkspecDir.cmake"
@@ -48,11 +52,16 @@ set(CMAKE_MAKEFILE_DEPENDS
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigExtras.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Gui/Qt5GuiConfigVersion.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfig.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigExtras.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsConfigVersion.cmake"
+  "/usr/lib/x86_64-linux-gnu/cmake/Qt5Widgets/Qt5WidgetsMacros.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Xml/Qt5XmlConfig.cmake"
   "/usr/lib/x86_64-linux-gnu/cmake/Qt5Xml/Qt5XmlConfigVersion.cmake"
   "/usr/share/ECM/cmake/ECMConfig.cmake"
   "/usr/share/ECM/cmake/ECMConfigVersion.cmake"
   "/usr/share/ECM/kde-modules/KDEInstallDirs.cmake"
+  "/usr/share/ECM/kde-modules/prefix.sh.cmake"
   "/usr/share/ECM/modules/ECMQueryQmake.cmake"
   "/usr/share/ECM/modules/ECMUseFindModules.cmake"
   "/usr/share/cmake-3.5/Modules/CMakeCInformation.cmake"
@@ -82,6 +91,8 @@ set(CMAKE_MAKEFILE_OUTPUTS
 
 # Byproducts of CMake generate step:
 set(CMAKE_MAKEFILE_PRODUCTS
+  "prefix.sh"
+  "prefix.sh"
   "CMakeFiles/CMakeDirectoryInformation.cmake"
   )
 

@@ -106,6 +106,7 @@ Item {
             color: "#80000000"
             source: dateLabel
         }
+        
     }
      
 }
