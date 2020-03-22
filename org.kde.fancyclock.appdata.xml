@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<component type="addon">
+    <id>org.kde.fancyclock</id>
+    <extends>org.kde.plasmashell</extends>
+    <name>Fancy Clock</name>
+    <summary>A nice looking clock</summary>
+    <url type="homepage">plasma.kde.org</url>
+    <url type="donation">https://www.kde.org/donate.php?app=org.kde.fancyclock</url>
+    <developer_name>Tjaart Blignaut &lt;tjaartblig@gmail.com&gt;</developer_name>
+    <icon type="stock">clock</icon>
+    <project_license>GPL-2.0</project_license>
+    <metadata_license>CC0-1.0</metadata_license>
+</component>
