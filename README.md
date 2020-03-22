@@ -13,6 +13,7 @@ The recommended installation method is via the KDE store.
 
 You can also use install widgets from local archive in KDE plasma, by downloading a release from the release page of this repo.
 
+## Screenshots 
 
 ![ScreenShot](https://raw.githubusercontent.com/tjaart/plasma-fancy-clock/master/screenshots/plasma-default-wall.png)
 
