@@ -19,6 +19,12 @@
             <minimum>2</minimum>
         </entry>
         
+        <entry name="timeLetterSpacing" type="Double">
+            <default>1.0</default>
+            <maximum>100</maximum>
+            <minimum>0</minimum>
+        </entry>
+        
         <entry name="textTimeFont" type="Font">
             <default>Lato</default>
         </entry>
@@ -46,6 +52,12 @@
             <default>7</default>
             <maximum>10</maximum>
             <minimum>2</minimum>
+        </entry>
+        
+        <entry name="dateLetterSpacing" type="Double">
+            <default>1.0</default>
+            <maximum>100</maximum>
+            <minimum>0</minimum>
         </entry>
         
         <entry name="textDateFont" type="Font">

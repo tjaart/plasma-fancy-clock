@@ -21,21 +21,25 @@ import QtQuick.Dialogs 1.2
 
 Item {
     
+    property alias cfg_enableTimeDisplay: enableTimeDisplay.checked
     property alias cfg_timeFormat: timeFormat.text
     property alias cfg_timeFontSize: timeFontSize.value
     property alias cfg_useSystemFontForTime: useSystemFontForTime.checked
     property alias cfg_textTimeFont: timeFontDialog.font
     property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
     property alias cfg_textTimeColor: timeColorPicker.chosenColor
-    property alias cfg_enableTimeDisplay: enableTimeDisplay.checked
     
+     property alias cfg_timeLetterSpacing: timeLetterSpacing.value
+    
+    property alias cfg_enableDateDisplay: enableDateDisplay.checked
     property alias cfg_dateFormat: dateFormat.text
     property alias cfg_dateFontSize: dateFontSize.value
     property alias cfg_useSystemFontForDate: useSystemFontForDate.checked
     property alias cfg_textDateFont: dateFontDialog.font
     property alias cfg_useSystemColorForDate: useSystemColorForDate.checked
     property alias cfg_textDateColor: dateColorPicker.chosenColor
-    property alias cfg_enableDateDisplay: enableDateDisplay.checked
+    
+    property alias cfg_dateLetterSpacing: dateLetterSpacing.value
 
     
     GridLayout {
@@ -90,6 +94,14 @@ Item {
                     }
                 }
             }
+        }
+        
+        SpinBox {
+            id: timeLetterSpacing
+            minimumValue: 0
+            maximumValue: 100
+            decimals: 2
+            stepSize: 0.1
         }
         
         CheckBox {
@@ -158,6 +170,14 @@ Item {
                     }
                 }
             }
+        }
+        
+        SpinBox {
+            id: dateLetterSpacing
+            minimumValue: 0
+            maximumValue: 100
+            decimals: 2
+            stepSize: 0.1
         }
         
         CheckBox {

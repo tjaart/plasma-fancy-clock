@@ -33,6 +33,8 @@ Item {
     property font textTimeFont: plasmoid.configuration.textTimeFont
     property bool useSystemColorForTime: plasmoid.configuration.useSystemColorForTime
     property string textTimeColor: plasmoid.configuration.textTimeColor
+    property string timeLetterSpacing: plasmoid.configuration.timeLetterSpacing
+    
     
     property bool enableDateDisplay: plasmoid.configuration.enableDateDisplay
     property string dateFormat: plasmoid.configuration.dateFormat
@@ -41,6 +43,7 @@ Item {
     property font textDateFont: plasmoid.configuration.textDateFont
     property bool useSystemColorForDate: plasmoid.configuration.useSystemColorForDate
     property string textDateColor: plasmoid.configuration.textDateColor
+    property string dateLetterSpacing: plasmoid.configuration.dateLetterSpacing
     
     property int widgetWidth: width
     
@@ -68,7 +71,7 @@ Item {
             font.family: useSystemFontForTime ? theme.defaultFont.family : textTimeFont.family;
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
-            // font.letterSpacing: 10.0;
+            font.letterSpacing: timeLetterSpacing;
             
             color: useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
             
@@ -80,12 +83,12 @@ Item {
             
             visible: enableDateDisplay;
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
-            
+            renderType: Text.QtRendering
             font.pixelSize: widgetWidth / dateFontSize;
             font.family: useSystemFontForTime ? theme.defaultFont.family : textDateFont.family;
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textDateFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textDateFont.weight;
-            // font.letterSpacing: 10.0;
+            font.letterSpacing: dateLetterSpacing;
             
             color: useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
             
