@@ -6,8 +6,8 @@
     <kcfgfile name=""/>
 
     <group name="General">
-        <entry name="showBackground" type="bool">
-            <default>false</default>
+        <entry name="enableTimeDisplay" type="bool">
+            <default>true</default>
         </entry>
         
         <entry name="timeFormat" type="string">
@@ -35,6 +35,10 @@
         </entry>
         
         
+        <entry name="enableDateDisplay" type="bool">
+            <default>true</default>
+        </entry>
+        
         <entry name="dateFormat" type="string">
             <default><![CDATA[dd MMM yyyy]]></default>
         </entry>
@@ -55,6 +59,7 @@
         <entry name="useSystemColorForDate" type="bool">
             <default>true</default>
         </entry>
+        
         <entry name="textDateColor" type="string">
             <default>#ffffff</default>
         </entry>

@@ -26,8 +26,7 @@ import QtGraphicalEffects 1.0
 Item {
     id: root
     
-    property bool showBackground: plasmoid.configuration.showBackground
-    
+    property bool enableTimeDisplay: plasmoid.configuration.enableTimeDisplay
     property string timeFormat: plasmoid.configuration.timeFormat
     property int timeFontSize: plasmoid.configuration.timeFontSize
     property bool useSystemFontForTime: plasmoid.configuration.useSystemFontForTime
@@ -35,6 +34,7 @@ Item {
     property bool useSystemColorForTime: plasmoid.configuration.useSystemColorForTime
     property string textTimeColor: plasmoid.configuration.textTimeColor
     
+    property bool enableDateDisplay: plasmoid.configuration.enableDateDisplay
     property string dateFormat: plasmoid.configuration.dateFormat
     property int dateFontSize: plasmoid.configuration.dateFontSize
     property bool useSystemFontForDate: plasmoid.configuration.useSystemFontForDate
@@ -44,7 +44,7 @@ Item {
     
     property int widgetWidth: width
     
-    Plasmoid.backgroundHints: showBackground ? "StandardBackground" : "NoBackground";
+    Plasmoid.backgroundHints: "NoBackground";
     
     PlasmaCore.DataSource {
         id: dataSource
@@ -55,36 +55,42 @@ Item {
     
     ColumnLayout {
         id: columns
-        spacing: 0;
+        spacing: 10;
         width: root.width;
         
         PlasmaComponents.Label {
             id: timeLabel
+            
+            visible: enableTimeDisplay;
             text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
             
             font.pixelSize: widgetWidth / timeFontSize;
             font.family: useSystemFontForTime ? theme.defaultFont.family : textTimeFont.family;
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
+            // font.letterSpacing: 10.0;
             
             color: useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
             
-            anchors.horizontalCenter: columns.horizontalCenter;
+            Layout.alignment: columns.horizontalCenter;
         }
          
         PlasmaComponents.Label {
             id: dateLabel
+            
+            visible: enableDateDisplay;
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             
             font.pixelSize: widgetWidth / dateFontSize;
             font.family: useSystemFontForTime ? theme.defaultFont.family : textDateFont.family;
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textDateFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textDateFont.weight;
-            
+            // font.letterSpacing: 10.0;
             
             color: useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
             
-            anchors.horizontalCenter: columns.horizontalCenter;
+            Layout.alignment: columns.horizontalCenter;
+            
         }
         
         DropShadow {
@@ -95,6 +101,7 @@ Item {
             samples: 17
             color: "#80000000"
             source: timeLabel
+            visible: enableTimeDisplay
         }
     
         DropShadow {
@@ -105,6 +112,7 @@ Item {
             samples: 17
             color: "#80000000"
             source: dateLabel
+            visible: enableDateDisplay
         }
         
     }

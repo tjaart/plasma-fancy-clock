@@ -27,6 +27,7 @@ Item {
     property alias cfg_textTimeFont: timeFontDialog.font
     property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
     property alias cfg_textTimeColor: timeColorPicker.chosenColor
+    property alias cfg_enableTimeDisplay: enableTimeDisplay.checked
     
     property alias cfg_dateFormat: dateFormat.text
     property alias cfg_dateFontSize: dateFontSize.value
@@ -34,21 +35,22 @@ Item {
     property alias cfg_textDateFont: dateFontDialog.font
     property alias cfg_useSystemColorForDate: useSystemColorForDate.checked
     property alias cfg_textDateColor: dateColorPicker.chosenColor
+    property alias cfg_enableDateDisplay: enableDateDisplay.checked
 
     
     GridLayout {
         columns: 2
         Layout.fillWidth: true;
-        // can't get this setting to look good.
-//         CheckBox {
-//             id: showBackground
-//             text: i18n('Show plasmoid background')
-//             Layout.columnSpan: 2
-//         }
         
         Label {
             text: i18n("Time Settings")
             font.pointSize: 16
+            Layout.columnSpan: 2
+        }
+        
+        CheckBox {
+            id: enableTimeDisplay
+            text: i18n('Enable time display')
             Layout.columnSpan: 2
         }
         
@@ -122,6 +124,12 @@ Item {
         Label {
             text: i18n("Date Settings")
             font.pointSize: 16
+        }
+        
+        CheckBox {
+            id: enableDateDisplay
+            text: i18n('Enable date display')
+            Layout.columnSpan: 2
         }
         
         CheckBox {
