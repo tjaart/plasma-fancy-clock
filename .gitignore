@@ -1,3 +1,6 @@
 build/**
 *.qmlc
 CMakeFiles/**
+CMakeCache.txt
+cmake_install.cmake_install
+Makefile
