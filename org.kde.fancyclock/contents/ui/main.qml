@@ -27,16 +27,19 @@ Item {
     id: root
     
     property bool enableTimeDisplay: plasmoid.configuration.enableTimeDisplay
+    property bool enableTimeShadow: plasmoid.configuration.enableTimeShadow
     property string timeFormat: plasmoid.configuration.timeFormat
     property int timeFontSize: plasmoid.configuration.timeFontSize
     property bool useSystemFontForTime: plasmoid.configuration.useSystemFontForTime
     property font textTimeFont: plasmoid.configuration.textTimeFont
     property bool useSystemColorForTime: plasmoid.configuration.useSystemColorForTime
     property string textTimeColor: plasmoid.configuration.textTimeColor
-    property string timeLetterSpacing: plasmoid.configuration.timeLetterSpacing
+    property double timeLetterSpacing: plasmoid.configuration.timeLetterSpacing
+    property double timeOpacity: plasmoid.configuration.timeOpacity / 100.0
     
     
     property bool enableDateDisplay: plasmoid.configuration.enableDateDisplay
+    property bool enableDateShadow: plasmoid.configuration.enableDateShadow
     property string dateFormat: plasmoid.configuration.dateFormat
     property int dateFontSize: plasmoid.configuration.dateFontSize
     property bool useSystemFontForDate: plasmoid.configuration.useSystemFontForDate
@@ -44,6 +47,7 @@ Item {
     property bool useSystemColorForDate: plasmoid.configuration.useSystemColorForDate
     property string textDateColor: plasmoid.configuration.textDateColor
     property string dateLetterSpacing: plasmoid.configuration.dateLetterSpacing
+    property double dateOpacity: plasmoid.configuration.dateOpacity / 100.0
     
     property int widgetWidth: width
     
@@ -72,6 +76,7 @@ Item {
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
             font.letterSpacing: timeLetterSpacing;
+            opacity: timeOpacity;
             
             color: useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
             
@@ -89,6 +94,7 @@ Item {
             font.italic: useSystemFontForTime ? theme.defaultFont.italic : textDateFont.italic;
             font.weight: useSystemFontForTime ? theme.defaultFont.weight : textDateFont.weight;
             font.letterSpacing: dateLetterSpacing;
+            opacity: dateOpacity
             
             color: useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
             
@@ -104,7 +110,8 @@ Item {
             samples: 17
             color: "#80000000"
             source: timeLabel
-            visible: enableTimeDisplay
+            visible: enableTimeDisplay && enableTimeShadow
+            opacity: timeOpacity;
         }
     
         DropShadow {
@@ -115,7 +122,8 @@ Item {
             samples: 17
             color: "#80000000"
             source: dateLabel
-            visible: enableDateDisplay
+            visible: enableDateDisplay && enableDateShadow
+            opacity: dateOpacity
         }
         
     }

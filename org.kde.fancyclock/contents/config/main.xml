@@ -19,8 +19,18 @@
             <minimum>2</minimum>
         </entry>
         
+        <entry name="enableTimeShadow" type="bool">
+            <default>true</default>
+        </entry>
+        
         <entry name="timeLetterSpacing" type="Double">
             <default>1.0</default>
+            <maximum>100</maximum>
+            <minimum>0</minimum>
+        </entry>
+        
+        <entry name="timeOpacity" type="int">
+            <default>100</default>
             <maximum>100</maximum>
             <minimum>0</minimum>
         </entry>
@@ -54,6 +64,10 @@
             <minimum>2</minimum>
         </entry>
         
+        <entry name="enableDateShadow" type="bool">
+            <default>true</default>
+        </entry>
+        
         <entry name="dateLetterSpacing" type="Double">
             <default>1.0</default>
             <maximum>100</maximum>
@@ -74,6 +88,12 @@
         
         <entry name="textDateColor" type="string">
             <default>#ffffff</default>
+        </entry>
+        
+        <entry name="dateOpacity" type="int">
+            <default>100</default>
+            <maximum>100</maximum>
+            <minimum>0</minimum>
         </entry>
 
         

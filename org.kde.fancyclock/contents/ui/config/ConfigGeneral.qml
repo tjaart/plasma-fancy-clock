@@ -22,16 +22,19 @@ import QtQuick.Dialogs 1.2
 Item {
     
     property alias cfg_enableTimeDisplay: enableTimeDisplay.checked
+    property alias cfg_enableTimeShadow: enableTimeShadow.checked
     property alias cfg_timeFormat: timeFormat.text
     property alias cfg_timeFontSize: timeFontSize.value
     property alias cfg_useSystemFontForTime: useSystemFontForTime.checked
     property alias cfg_textTimeFont: timeFontDialog.font
     property alias cfg_useSystemColorForTime: useSystemColorForTime.checked
     property alias cfg_textTimeColor: timeColorPicker.chosenColor
-    
-     property alias cfg_timeLetterSpacing: timeLetterSpacing.value
+    property alias cfg_timeLetterSpacing: timeLetterSpacing.value
+    property alias cfg_timeOpacity: timeOpacity.value
     
     property alias cfg_enableDateDisplay: enableDateDisplay.checked
+    
+    property alias cfg_enableDateShadow: enableDateShadow.checked
     property alias cfg_dateFormat: dateFormat.text
     property alias cfg_dateFontSize: dateFontSize.value
     property alias cfg_useSystemFontForDate: useSystemFontForDate.checked
@@ -40,6 +43,7 @@ Item {
     property alias cfg_textDateColor: dateColorPicker.chosenColor
     
     property alias cfg_dateLetterSpacing: dateLetterSpacing.value
+    property alias cfg_dateOpacity: dateOpacity.value
 
     
     GridLayout {
@@ -56,6 +60,24 @@ Item {
             id: enableTimeDisplay
             text: i18n('Enable time display')
             Layout.columnSpan: 2
+        }
+        
+        CheckBox {
+            id: enableTimeShadow
+            text: i18n('Enable time shadow')
+            Layout.columnSpan: 2
+        }
+        
+        Label {
+            Layout.columnSpan: 2
+            text: i18n("<a href=\"http://doc.qt.io/qt-5/qml-qtqml-qt.html#formatDateTime-method\">Time Format Documentation</a>")
+
+            onLinkActivated: Qt.openUrlExternally(link)
+            MouseArea {
+                anchors.fill: parent
+                acceptedButtons: Qt.NoButton 
+                cursorShape: parent.hoveredLink ? Qt.PointingHandCursor : Qt.ArrowCursor
+            }
         }
         
         Label {
@@ -76,6 +98,7 @@ Item {
         
         RowLayout {
             enabled: !useSystemFontForTime.checked
+            Layout.columnSpan: 2
             Label {
                 text: i18n("Time font:")
             }
@@ -96,12 +119,29 @@ Item {
             }
         }
         
+        Label {
+            text: i18n('Letter Spacing:')
+            
+        }
+        
         SpinBox {
             id: timeLetterSpacing
             minimumValue: 0
             maximumValue: 100
             decimals: 2
             stepSize: 0.1
+        }
+        
+        Label {
+            text: i18n('Opacity:')
+        }
+        
+        SpinBox {
+            id: timeOpacity
+            minimumValue: 0
+            maximumValue: 100
+            decimals: 0
+            stepSize: 1
         }
         
         CheckBox {
@@ -145,6 +185,12 @@ Item {
         }
         
         CheckBox {
+            id: enableDateShadow
+            text: i18n('Enable date shadow')
+            Layout.columnSpan: 2
+        }
+        
+        CheckBox {
             id: useSystemFontForDate
             text: i18n('Use system font')
             Layout.columnSpan: 2
@@ -152,6 +198,7 @@ Item {
         
         RowLayout {
             enabled: !useSystemFontForDate.checked
+            Layout.columnSpan: 2
             Label {
                 text: i18n("Date font:")
             }
@@ -172,12 +219,28 @@ Item {
             }
         }
         
+        Label {
+            text: i18n('Letter Spacing:')
+        }
+        
         SpinBox {
             id: dateLetterSpacing
             minimumValue: 0
             maximumValue: 100
             decimals: 2
             stepSize: 0.1
+        }
+        
+        Label {
+            text: i18n('Opacity:')
+        }
+        
+        SpinBox {
+            id: dateOpacity
+            minimumValue: 0
+            maximumValue: 100
+            decimals: 0
+            stepSize: 1
         }
         
         CheckBox {
