@@ -90,9 +90,9 @@ Item {
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             renderType: Text.QtRendering
             font.pixelSize: widgetWidth / dateFontSize;
-            font.family: useSystemFontForTime ? theme.defaultFont.family : textDateFont.family;
-            font.italic: useSystemFontForTime ? theme.defaultFont.italic : textDateFont.italic;
-            font.weight: useSystemFontForTime ? theme.defaultFont.weight : textDateFont.weight;
+            font.family: useSystemFontForDate ? theme.defaultFont.family : textDateFont.family;
+            font.italic: useSystemFontForDate ? theme.defaultFont.italic : textDateFont.italic;
+            font.weight: useSystemFontForDate ? theme.defaultFont.weight : textDateFont.weight;
             font.letterSpacing: dateLetterSpacing;
             opacity: dateOpacity
             
