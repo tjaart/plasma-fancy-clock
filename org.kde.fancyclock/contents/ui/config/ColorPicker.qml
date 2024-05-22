@@ -19,20 +19,33 @@
  */
 
 import QtQuick 2.2
-import QtQuick.Layouts 1.0
-import QtQuick.Controls 1.2 as QtControls
-import QtQuick.Dialogs 1.0 as QtDialogs
-import org.kde.plasma.core as PlasmaCore
+import QtQuick.Layouts
+import QtQuick.Controls  as QtControls
+import QtQuick.Dialogs as QtDialogs
+import org.kde.kcmutils as KCM
 
-PlasmoidItem {
+
+
+Item {
     id: colorPicker
     
-    property alias chosenColor: colorDialog.color
-
+    // property var chosenColor: colorDialog.color
+    //
     width: childrenRect.width
     height: childrenRect.height
     Layout.alignment: Qt.AlignVCenter
+    QtDialogs.ColorDialog {
+        id: colorDialog
+        options: ColorDialog.ShowAlphaChannel
 
+    }
+    //
+    // QtDialogs.ColorDialog {
+    //         id: colorDialog
+    //
+    //         showAlphaChannel: true
+    //
+    //     }
     Rectangle {
         color: colorDialog.color
         radius: width / 2
@@ -44,12 +57,9 @@ PlasmoidItem {
             color: Qt.darker(colorDialog.color, 1.5)
         }
 
-        QtDialogs.ColorDialog {
-            id: colorDialog
-            showAlphaChannel: true
-        }
-    }
 
+    }
+    //
     MouseArea {
         id: mouseArea
         anchors.fill: parent
