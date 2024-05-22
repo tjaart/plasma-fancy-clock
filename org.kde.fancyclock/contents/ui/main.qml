@@ -14,16 +14,17 @@
  * You should have received a copy of the GNU General Public License
  * along with this program.  If not, see <http: //www.gnu.org/licenses/>.
  */
-import QtQuick 2.2
+import QtQuick 2.15
 import QtQuick.Layouts 1.3
-import org.kde.plasma.plasmoid 2.0
+import org.kde.plasma.plasmoid
 import QtQml 2.0
 
-import org.kde.plasma.core 2.0 as PlasmaCore
-import org.kde.plasma.components 2.0 as PlasmaComponents
-import QtGraphicalEffects 1.0
+import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.components as PlasmaComponents
+import Qt5Compat.GraphicalEffects
+import org.kde.plasma.plasma5support as Plasma5Support
 
-Item {
+PlasmoidItem {
     id: root
     
     property bool enableTimeDisplay: plasmoid.configuration.enableTimeDisplay
@@ -53,7 +54,7 @@ Item {
     
     Plasmoid.backgroundHints: "NoBackground";
     
-    PlasmaCore.DataSource {
+    Plasma5Support.DataSource {
         id: dataSource
         engine: "time"
         connectedSources: ["Local"]
@@ -68,40 +69,41 @@ Item {
         PlasmaComponents.Label {
             id: timeLabel
             
-            visible: enableTimeDisplay;
+            visible: root.enableTimeDisplay;
             text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
             
-            font.pixelSize: widgetWidth / timeFontSize;
-            font.family: useSystemFontForTime ? theme.defaultFont.family : textTimeFont.family;
-            font.italic: useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
-            font.weight: useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
-            font.letterSpacing: timeLetterSpacing;
-            opacity: timeOpacity;
+            font.pixelSize: root.widgetWidth / timeFontSize;
+            font.family: root.useSystemFontForTime ? theme.defaultFont.family : textTimeFont.family;
+            font.italic: root.useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
+            font.weight: root.useSystemFontForTime ? theme.defaultFont.weight : textTimeFont.weight;
+            font.letterSpacing: root.timeLetterSpacing;
+            opacity: root.timeOpacity;
             
-            color: useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
+            color: root.useSystemColorForTime ? PlasmaCore.ColorScope.textColor : textTimeColor;
             
-            Layout.alignment: columns.horizontalCenter;
+            Layout.alignment: root.columns.horizontalCenter;
         }
          
         PlasmaComponents.Label {
             id: dateLabel
             
-            visible: enableDateDisplay;
+            visible: root.enableDateDisplay;
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             renderType: Text.QtRendering
-            font.pixelSize: widgetWidth / dateFontSize;
-            font.family: useSystemFontForDate ? theme.defaultFont.family : textDateFont.family;
-            font.italic: useSystemFontForDate ? theme.defaultFont.italic : textDateFont.italic;
-            font.weight: useSystemFontForDate ? theme.defaultFont.weight : textDateFont.weight;
-            font.letterSpacing: dateLetterSpacing;
-            opacity: dateOpacity
+            font.pixelSize: root.widgetWidth / dateFontSize;
+            font.family: root.useSystemFontForDate ? theme.defaultFont.family : textDateFont.family;
+            font.italic: root.useSystemFontForDate ? theme.defaultFont.italic : textDateFont.italic;
+            font.weight: root.useSystemFontForDate ? theme.defaultFont.weight : textDateFont.weight;
+            font.letterSpacing: root.dateLetterSpacing;
+            opacity: root.dateOpacity
             
-            color: useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
+            color: root.useSystemColorForDate ? PlasmaCore.ColorScope.textColor : textDateColor;
             
-            Layout.alignment: columns.horizontalCenter;
+            Layout.alignment: root.columns.horizontalCenter;
             
         }
         
+
         DropShadow {
             anchors.fill: timeLabel
             horizontalOffset: 3
