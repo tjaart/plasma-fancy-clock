@@ -20,7 +20,7 @@
 
 import QtQuick 2.2
 import QtQuick.Layouts
-import QtQuick.Controls  as QtControls
+import QtQuick.Controls as QtControls
 import QtQuick.Dialogs as QtDialogs
 import org.kde.kcmutils as KCM
 
@@ -29,32 +29,38 @@ import org.kde.kcmutils as KCM
 Item {
     id: colorPicker
     
-    // property var chosenColor: colorDialog.color
+     property var chosenColor: colorDialog.selectedColor
     //
     width: childrenRect.width
     height: childrenRect.height
     Layout.alignment: Qt.AlignVCenter
+
     QtDialogs.ColorDialog {
         id: colorDialog
-        options: ColorDialog.ShowAlphaChannel
+        options: QtDialogs.ColorDialog.ShowAlphaChannel
+
+
+
+
+
 
     }
     //
     // QtDialogs.ColorDialog {
     //         id: colorDialog
     //
-    //         showAlphaChannel: true
+    //
     //
     //     }
     Rectangle {
-        color: colorDialog.color
+        color: colorDialog.selectedColor
         radius: width / 2
         height: 20
         width: height
         opacity: enabled ? 1 : 0.5
         border {
             width: mouseArea.containsMouse ? 3 : 1
-            color: Qt.darker(colorDialog.color, 1.5)
+            color: Qt.darker(colorDialog.selectedColor, 1.5)
         }
 
 
