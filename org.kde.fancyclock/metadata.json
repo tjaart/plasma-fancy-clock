@@ -1,0 +1,21 @@
+{
+    "KPlugin": {
+        "Authors": [
+            {
+                "Email": "tjaartblig@gmail.com",
+                "Name": "Tjaart Blignaut"
+            }
+        ],
+        "Category": "Date and Time",
+        "Description": "A nice looking clock",
+        "Icon": "clock",
+        "Id": "org.kde.fancyclock",
+        "License": "GPL",
+        "Name": "Fancy Clock",
+        "KPackageStructure": "Plasma/Applet",
+        "Version": "5.0",
+        "Website": "plasma.kde.org"
+    },
+    "X-KDE-ParentApp": "",
+    "X-Plasma-API-Minimum-Version": "6.0"
+}

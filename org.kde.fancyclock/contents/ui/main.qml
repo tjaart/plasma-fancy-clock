@@ -16,13 +16,16 @@
  */
 import QtQuick 2.15
 import QtQuick.Layouts 1.3
-import org.kde.plasma.plasmoid
 import QtQml 2.0
 
 import org.kde.plasma.core as PlasmaCore
+import org.kde.plasma.plasmoid
+
 import org.kde.plasma.components as PlasmaComponents
 import Qt5Compat.GraphicalEffects
 import org.kde.plasma.plasma5support as Plasma5Support
+import QtQuick.Effects
+
 
 PlasmoidItem {
     id: root
@@ -52,7 +55,7 @@ PlasmoidItem {
     
     property int widgetWidth: width
     
-    Plasmoid.backgroundHints: "NoBackground";
+     Plasmoid.backgroundHints: PlasmaCore.Types.NoBackground
     
     Plasma5Support.DataSource {
         id: dataSource
@@ -68,7 +71,6 @@ PlasmoidItem {
         
         PlasmaComponents.Label {
             id: timeLabel
-            
             visible: root.enableTimeDisplay;
             text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
             
@@ -86,7 +88,7 @@ PlasmoidItem {
          
         PlasmaComponents.Label {
             id: dateLabel
-            
+
             visible: root.enableDateDisplay;
             text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
             renderType: Text.QtRendering
@@ -102,7 +104,18 @@ PlasmoidItem {
             Layout.alignment: root.columns.horizontalCenter;
             
         }
-        
+        // MultiEffect {
+        //     source: timeLabel
+        //     anchors.fill: timeLabel
+        //     saturation: -1.0
+        //     shadowEnabled: enableTimeShadow
+        //     autoPaddingEnabled: true
+        //     shadowBlur: 0.4
+        //     shadowColor: "#80000000"
+        //     shadowOpacity: timeOpacity
+        //     shadowVerticalOffset: 3
+        //     shadowHorizontalOffset: 3
+        // }
 
         DropShadow {
             anchors.fill: timeLabel
