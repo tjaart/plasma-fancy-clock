@@ -1,1 +1,1 @@
-kpackagetool5 -t Plasma/Applet --install org.kde.fancyclock
+kpackagetool6 -t Plasma/Applet --install org.kde.fancyclock
