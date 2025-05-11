@@ -72,8 +72,8 @@ PlasmoidItem {
         PlasmaComponents.Label {
             id: timeLabel
             visible: root.enableTimeDisplay;
-            text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat);
-            
+            //text: Qt.formatTime(dataSource.data.Local.DateTime, timeFormat, Qt.SystemLocaleShortDate);
+            text: Qt.locale().toString(dataSource.data.Local.DateTime, timeFormat)
             font.pixelSize: root.widgetWidth / timeFontSize;
             font.family: root.useSystemFontForTime ? theme.defaultFont.family : textTimeFont.family;
             font.italic: root.useSystemFontForTime ? theme.defaultFont.italic : textTimeFont.italic;
@@ -90,7 +90,8 @@ PlasmoidItem {
             id: dateLabel
 
             visible: root.enableDateDisplay;
-            text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat);
+            //text: Qt.formatDate(dataSource.data.Local.DateTime, dateFormat, Qt.SystemLocaleShortDate);
+            text: Qt.locale().toString(dataSource.data.Local.DateTime, dateFormat)
             renderType: Text.QtRendering
             font.pixelSize: root.widgetWidth / dateFontSize;
             font.family: root.useSystemFontForDate ? theme.defaultFont.family : textDateFont.family;
