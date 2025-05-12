@@ -13,7 +13,7 @@
         "License": "GPL",
         "Name": "Fancy Clock",
         "KPackageStructure": "Plasma/Applet",
-        "Version": "6.0",
+        "Version": "6.1",
         "Website": "plasma.kde.org"
     },
     "X-KDE-ParentApp": "",

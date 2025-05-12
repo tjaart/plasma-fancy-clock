@@ -39,3 +39,6 @@ You can run the widget using the `run.sh` script in the root directory of the re
 
 If you want to install it in your local plasma, run `upgrade.sh` from your the root of the repo.
 
+
+
+<a href="https://www.buymeacoffee.com/tjaartb" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/v2/default-yellow.png" alt="Buy Me A Coffee" style="height: 60px !important;width: 217px !important;" ></a>
