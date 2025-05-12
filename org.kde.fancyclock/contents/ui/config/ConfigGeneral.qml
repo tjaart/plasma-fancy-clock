@@ -69,7 +69,7 @@ KCM.SimpleKCM {
             }
             CheckBox {
                 id: enableTimeDisplay
-                text: i18n('Enable time dissplay')
+                text: i18n('Enable time display')
                 Layout.columnSpan: 2
             }
             CheckBox {
